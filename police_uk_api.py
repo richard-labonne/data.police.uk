@@ -16,7 +16,7 @@ def get_api_dates(utc_now):
     set_api_dates = ["{}-{}".format(utc_now.year,m) for m in set_api_months]
     return set_api_dates
 
-#2 - Initalising objects to be used in for loop
+#2 - Initialising objects to be used in for loop
 
 df_cols = ['month','category','area']
 maindf = pd.DataFrame(columns=df_cols)
