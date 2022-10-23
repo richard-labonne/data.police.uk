@@ -36,9 +36,9 @@ for date in get_api_dates(utc_now):
 #TRANSFORM - add column to data set           
             if status is 200 and payload is not empty:
                 #Convert JSON payload into pandas object
-                subdf = pd.DataFrame(pd.read_json(payload), columns = ('month', 'category'))
+                subdf = pd.DataFrame(pd.read_json(payload), columns = (df_cols[0], df_cols[1]))
                 #Add a column 'area'. Obtain value of location_id key in 'get_api_locations'
-                subdf.insert(2, "area", get_api_locations[location])
+                subdf.insert(2, df_cols[2], get_api_locations[location])
                 #Append this dataframe to output dataframe
                 maindf = maindf.append(subdf, ignore_index = True)
                 del subdf
